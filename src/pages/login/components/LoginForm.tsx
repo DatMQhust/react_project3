@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { FaGoogle, FaGithub } from 'react-icons/fa';
+import { FaGoogle } from 'react-icons/fa';
 
 import styles from '../login.module.css';
 
@@ -20,7 +20,7 @@ const LoginForm: FC<LoginFormProps> = ({ onSubmit, loading = false }) => {
 
   return (
     <form onSubmit={handleSubmit} className={styles.loginCard}>
-      <h1 className={styles.title}>Welcome Back</h1>
+      <h1 className={styles.title}>Chào mừng bạn trở lại!</h1>
 
       <div className={styles.inputGroup}>
         <label htmlFor="email" className={styles.label}>
@@ -31,7 +31,7 @@ const LoginForm: FC<LoginFormProps> = ({ onSubmit, loading = false }) => {
           id="email"
           name="email"
           className={styles.input}
-          placeholder="Enter your email"
+          placeholder="Nhập email của bạn"
           required
           disabled={loading}
         />
@@ -39,14 +39,14 @@ const LoginForm: FC<LoginFormProps> = ({ onSubmit, loading = false }) => {
 
       <div className={styles.inputGroup}>
         <label htmlFor="password" className={styles.label}>
-          Password
+          Mật khẩu
         </label>
         <input
           type="password"
           id="password"
           name="password"
           className={styles.input}
-          placeholder="Enter your password"
+          placeholder="Nhập mật khẩu của bạn"
           required
           disabled={loading}
         />
@@ -57,16 +57,16 @@ const LoginForm: FC<LoginFormProps> = ({ onSubmit, loading = false }) => {
         className={`${styles.button} ${loading ? styles.buttonDisabled : ''}`}
         disabled={loading} 
       >
-        {loading ? 'Signing in...' : 'Sign In'}
+        {loading ? 'Đang đăng nhập...' : 'Đăng nhập'}
       </button>
 
       <a href="#" className={styles.forgotPassword}>
-        Forgot your password?
+        Quên mật khẩu?
       </a>
 
       <div className={styles.divider}>
         <div className={styles.dividerLine} />
-        <span className={styles.dividerText}>or continue with</span>
+        <span className={styles.dividerText}>hoặc tiếp tục với</span>
         <div className={styles.dividerLine} />
       </div>
 
@@ -75,15 +75,7 @@ const LoginForm: FC<LoginFormProps> = ({ onSubmit, loading = false }) => {
         className={styles.socialButton}
         disabled={loading}
       >
-        <FaGoogle className="mr-2" /> Sign in with Google
-      </button>
-
-      <button
-        type="button"
-        className={styles.socialButton}
-        disabled={loading}
-      >
-        <FaGithub className="mr-2" /> Sign in with GitHub
+        <FaGoogle className="mr-2" /> Đăng nhập với Google
       </button>
     </form>
   );

@@ -1,5 +1,6 @@
 import { FC } from 'react';
-import { FaGoogle, FaGithub } from 'react-icons/fa';
+
+import { FaGoogle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 import styles from './register.module.css';
@@ -25,14 +26,14 @@ const RegisterForm: FC<RegisterFormProps> = ({ onSubmit, loading = false }) => {
     <form onSubmit={handleSubmit} className={styles.registerCard}>
       <div className={styles.leftSection}>
         <div>
-          <h1 className={styles.title}>Create Account</h1>
-          <p className={styles.subtitle}>Join us today! Enter your details to get started.</p>
+          <h1 className={styles.title}>Đăng ký ngay!</h1>
+          <p className={styles.subtitle}>Nhập thông tin để khám phá các sự kiện hấp dẫn.</p>
         </div>
 
         <div className={styles.socialSection}>
           <div className={styles.divider}>
             <div className={styles.dividerLine} />
-            <span className={styles.dividerText}>quick access</span>
+            <span className={styles.dividerText}>Truy cập nhanh</span>
             <div className={styles.dividerLine} />
           </div>
 
@@ -46,14 +47,6 @@ const RegisterForm: FC<RegisterFormProps> = ({ onSubmit, loading = false }) => {
               Google
             </button>
 
-            <button
-              type="button"
-              className={styles.socialButton}
-              disabled={loading}
-            >
-              <FaGithub className="mr-2" />
-              GitHub
-            </button>
           </div>
         </div>
       </div>
@@ -73,20 +66,20 @@ const RegisterForm: FC<RegisterFormProps> = ({ onSubmit, loading = false }) => {
         </div>
 
         <div className={styles.inputGroup}>
-          <label htmlFor="name" className={styles.label}>Full Name</label>
+          <label htmlFor="name" className={styles.label}>Họ và tên</label>
           <input
             type="text"
             id="name"
             name="name"
             className={styles.input}
-            placeholder="John Doe"
+            placeholder="Nguyễn Văn A"
             required
             disabled={loading}
           />
         </div>
 
         <div className={styles.inputGroup}>
-          <label htmlFor="phone" className={styles.label}>Phone Number</label>
+          <label htmlFor="phone" className={styles.label}>Số điện thoại</label>
           <input
             type="tel"
             id="phone"
@@ -100,7 +93,7 @@ const RegisterForm: FC<RegisterFormProps> = ({ onSubmit, loading = false }) => {
         </div>
 
         <div className={styles.inputGroup}>
-          <label htmlFor="password" className={styles.label}>Password</label>
+          <label htmlFor="password" className={styles.label}>Mật khẩu</label>
           <input
             type="password"
             id="password"
@@ -118,13 +111,13 @@ const RegisterForm: FC<RegisterFormProps> = ({ onSubmit, loading = false }) => {
           className={`${styles.button} ${loading ? styles.buttonDisabled : ''}`}
           disabled={loading}
         >
-          {loading ? 'Creating Account...' : 'Create Account'}
+          {loading ? 'Đang tạo tài khoản...' : 'Tạo tài khoản'}
         </button>
 
         <p className={styles.haveAccount}>
-          Already have an account?
+          Đã có tài khoản?
           <Link to="/login" className={styles.haveAccountLink}>
-            Sign in
+            Đăng nhập ngay
           </Link>
         </p>
       </div>
