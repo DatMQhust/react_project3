@@ -4,6 +4,9 @@ import { Navigate, useRoutes } from 'react-router-dom';
 
 import { routeList } from '@/data/constant/navs';
 import LayoutComponent from '@/layout';
+import { Test } from '@/pages';
+import LoginPage from '@/pages/login/login';
+import RegisterPage from '@/pages/login/register';
 
 const NotFound = lazy(() => import('@/pages/not-found'));
 
@@ -21,6 +24,18 @@ const routes = [
         path: '*',
         element: <NotFound />,
       },
+      {
+        path: 'test',
+        element: <Test />,
+      },
+      {
+        path: '/login',
+        element: <LoginPage />
+      },
+      {
+        path: '/register',
+        element: <RegisterPage />
+      }
     ],
   },
 ];

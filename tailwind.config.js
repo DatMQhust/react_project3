@@ -17,6 +17,19 @@ module.exports = {
     },
     extend: {
       colors: {
+        gold: {
+          DEFAULT: '#FFD700',
+          50: '#FFF9E6',
+          100: '#FFF3CC',
+          200: '#FFE799',
+          300: '#FFDB66',
+          400: '#FFCF33',
+          500: '#FFD700',
+          600: '#CCB000',
+          700: '#998400',
+          800: '#665800',
+          900: '#332C00',
+        },
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',

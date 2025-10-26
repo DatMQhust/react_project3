@@ -1,9 +1,6 @@
 import { lazy } from 'react';
 
 const Home = lazy(() => import('@/pages/home'));
+const Test = lazy(() => import('@/pages/test_page'));
 
-const Users = lazy(() => import('@/pages/users'));
-
-const Todos = lazy(() => import('@/pages/todos'));
-
-export { Home, Users, Todos };
+export { Home, Test };
