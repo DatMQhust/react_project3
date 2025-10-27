@@ -17,7 +17,10 @@ const LoginForm: FC<LoginFormProps> = ({ onSubmit, loading = false }) => {
     const password = (form.elements.namedItem('password') as HTMLInputElement).value;
     onSubmit(email, password);
   };
-
+  const baseUrl = import.meta.env.VITE_API_URL;
+  const signInWithGoogle = () => {
+    window.location.href = `${baseUrl}/auth/google/login`;
+  };
   return (
     <form onSubmit={handleSubmit} className={styles.loginCard}>
       <h1 className={styles.title}>Chào mừng bạn trở lại!</h1>
@@ -74,6 +77,7 @@ const LoginForm: FC<LoginFormProps> = ({ onSubmit, loading = false }) => {
         type="button"
         className={styles.socialButton}
         disabled={loading}
+        onClick={signInWithGoogle}
       >
         <FaGoogle className="mr-2" /> Đăng nhập với Google
       </button>

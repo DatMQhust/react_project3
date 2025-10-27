@@ -21,7 +21,10 @@ const RegisterForm: FC<RegisterFormProps> = ({ onSubmit, loading = false }) => {
     const phone = (form.elements.namedItem('phone') as HTMLInputElement).value;
     onSubmit({ email, password, name, phone });
   };
-
+  const baseUrl = import.meta.env.VITE_API_URL;
+  const signInWithGoogle = () => {
+    window.location.href = `${baseUrl}/auth/google/login`;
+  };
   return (
     <form onSubmit={handleSubmit} className={styles.registerCard}>
       <div className={styles.leftSection}>
@@ -42,6 +45,7 @@ const RegisterForm: FC<RegisterFormProps> = ({ onSubmit, loading = false }) => {
               type="button"
               className={styles.socialButton}
               disabled={loading}
+              onClick={signInWithGoogle}
             >
               <FaGoogle className="mr-2" />
               Google
